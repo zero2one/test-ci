@@ -14,9 +14,22 @@ class EchoWorld_TestCase extends PHPUnit_Framework_TestCase
     public function testMessage()
     {
         $dir = dirname(dirname(__FILE__)) . '/src';
-        include $dir . '/EchoWorld.php';
+        require_once $dir . '/EchoWorld.php';
         $echoWorld = new EchoWorld();
 
         $this->assertEquals('Hello World', $echoWorld->message());
+    }
+
+    /**
+     * Test hello person.
+     */
+    public function testHelloPerson()
+    {
+        $person = 'SGrame';
+
+        require_once $dir . '/EchoWorld.php';
+        $echoWorld = new EchoWorld();
+
+        $this->assertEquals('Hello SGrame', $echoWorld->helloPerson($person));
     }
 }

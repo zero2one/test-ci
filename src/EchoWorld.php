@@ -12,4 +12,12 @@ class EchoWorld
     {
         return 'Hello World';
     }
+
+    /**
+     * Return 'Hello <Person>'.
+     */
+    public function helloPerson($person)
+    {
+        return 'Hello ' . $person;
+    }
 }
