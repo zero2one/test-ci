@@ -9,14 +9,20 @@
 class EchoWorld_TestCase extends PHPUnit_Framework_TestCase
 {
     /**
+     * Prepare the test
+     */
+    public function setUp()
+    {
+        $dir = dirname(dirname(__FILE__)) . '/src';
+        require_once $dir . '/EchoWorld.php';
+    }
+
+    /**
      * Test the message class.
      */
     public function testMessage()
     {
-        $dir = dirname(dirname(__FILE__)) . '/src';
-        require_once $dir . '/EchoWorld.php';
         $echoWorld = new EchoWorld();
-
         $this->assertEquals('Hello World', $echoWorld->message());
     }
 
@@ -26,10 +32,7 @@ class EchoWorld_TestCase extends PHPUnit_Framework_TestCase
     public function testHelloPerson()
     {
         $person = 'SGrame';
-
-        require_once $dir . '/EchoWorld.php';
         $echoWorld = new EchoWorld();
-
         $this->assertEquals('Hello SGrame', $echoWorld->helloPerson($person));
     }
 }
