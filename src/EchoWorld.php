@@ -6,7 +6,7 @@
 class EchoWorld
 {
     /**
-     * Returns 'Hello World'
+     * Returns 'Hello World'.
      */
     public function message()
     {
@@ -19,5 +19,13 @@ class EchoWorld
     public function helloPerson($person)
     {
         return 'Hello ' . $person;
+    }
+
+    /**
+     * Return 'Rule the World!'.
+     */
+    public function whatIsThePurpose()
+    {
+        return 'Rule the World!';
     }
 }

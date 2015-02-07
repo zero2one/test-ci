@@ -7,7 +7,6 @@ php:
 
 before_install:
   - composer self-update
-  - composer install
 
 script:
   - phpunit
@@ -16,7 +15,3 @@ after_script:
   # Scrutinizer-CI.
   - wget https://scrutinizer-ci.com/ocular.phar
   - php ocular.phar code-coverage:upload --format=php-clover build/logs/clover.xml
-
-  # Code Climate.
-  - CODECLIMATE_REPO_TOKEN=77f6524e0b8479cb963cceee02ddd50ee9638bb3a5b325129668252c63c07c74 bin/test-reporter --stdout > codeclimate.json
-  - "curl -X POST -d @codeclimate.json -H 'Content-Type: application/json' -H 'User-Agent: Code Climate (PHP Test Reporter v0.1.1)' https://codeclimate.com/test_reports"

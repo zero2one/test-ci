@@ -35,4 +35,16 @@ class EchoWorld_TestCase extends PHPUnit_Framework_TestCase
         $echoWorld = new EchoWorld();
         $this->assertEquals('Hello SGrame', $echoWorld->helloPerson($person));
     }
+
+    /**
+     * Test the purpose.
+     */
+    public function testWhatIsThePurpose()
+    {
+        $echoWorld = new EchoWorld();
+        $this->assertEquals(
+            'Rule the World!',
+            $echoWorld->whatIsThePurpose()
+        );
+    }
 }
