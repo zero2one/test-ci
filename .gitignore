@@ -2,3 +2,6 @@
 # Ignore the build directory.
 build
 coverage.clover
+
+# Ignore packages downloaded by composer.
+vendor
