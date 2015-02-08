@@ -7,6 +7,7 @@ php:
 
 before_install:
   - composer self-update
+  - composer install
 
 script:
   - phpunit
@@ -15,3 +16,5 @@ after_script:
   # Scrutinizer-CI.
   - wget https://scrutinizer-ci.com/ocular.phar
   - php ocular.phar code-coverage:upload --format=php-clover build/logs/clover.xml
+  # CodeClimate
+  - ./codeclimate.sh
